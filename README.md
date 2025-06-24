@@ -19,7 +19,7 @@ FDTest adalah aplikasi manajemen buku dan pengguna berbasis Laravel. Aplikasi in
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/muhamadfadly/fadly_fdtest.git
+git clone https://github.com/muhamadfadly-18/fadly_fdtest.git
 cd fadly_fdtest
 ```
 
