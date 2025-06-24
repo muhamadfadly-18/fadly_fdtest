@@ -18,43 +18,94 @@ FDTest adalah aplikasi manajemen buku dan pengguna berbasis Laravel. Aplikasi in
 
 ### 1. Clone Repository
 
-git clone https://github.com/muhamadfadly-18/fadly_fdtest.git
+```bash
+git clone https://github.com/muhamadfadly/fadly_fdtest.git
 cd fadly_fdtest
-
+```
 
 ### 2. Install Dependensi
-- composer install
-- npm install && npm run dev
+
+```bash
+composer install
+npm install && npm run dev
+```
 
 ### 3. Konfigurasi Environment
 
+```bash
 cp .env.example .env
+```
 
-### 4. Generate APP Key & Migrasi Database
+Lalu edit file `.env` dan sesuaikan konfigurasi database kamu:
 
--php artisan key:generate
--php artisan migrate
- 
+```env
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=fan_inter
+DB_USERNAME=postgres
+DB_PASSWORD=180407
+```
+
+### 4. Generate APP Key dan Jalankan Migrasi
+
+```bash
+php artisan key:generate
+php artisan migrate
+```
+
 ### 5. Jalankan Aplikasi
 
+```bash
 php artisan serve
+```
 
+---
 
+## 🔐 Fitur Utama
 
-🔐 Fitur Utama
-- Login menggunakan email dan password
-- Registrasi akun baru
-- Reset password melalui email
-- Verifikasi email pengguna
-- Ubah password dari halaman profil
-- Menampilkan nama pengguna dan status verifikasi
-- CRUD Buku (judul, penulis, deskripsi, thumbnail, rating 1–5)
-- Guest bisa melihat daftar buku yang diunggah pengguna lain
-- Filter buku berdasarkan penulis, tanggal upload, dan rating
-- Fitur pencarian dan paginasi
-- Daftar pengguna + filter status verifikasi email
+- Autentikasi:
+  - Login, Register, Verifikasi Email, Lupa Password
+- Manajemen Buku:
+  - CRUD buku lengkap (judul, penulis, deskripsi, rating, thumbnail)
+- Dashboard:
+  - Menampilkan pengguna, pencarian, filter verifikasi email
+- Landing Page:
+  - Melihat daftar buku pengguna lain dengan filter & paginasi
 
-📁 Struktur Folder Penting
+---
+
+## ✅ Testing
+
+Jalankan testing dengan:
+
+```bash
+php artisan test
+```
+
+Pastikan kamu sudah membuat database untuk testing, misalnya:
+
+```env
+DB_DATABASE=fan_inter_test
+```
+
+Atau set di file `phpunit.xml`:
+
+```xml
+<php>
+    <env name="APP_ENV" value="testing"/>
+    <env name="DB_CONNECTION" value="pgsql"/>
+    <env name="DB_DATABASE" value="fan_inter_test"/>
+    <env name="DB_USERNAME" value="postgres"/>
+    <env name="DB_PASSWORD" value="180407"/>
+</php>
+```
+
+---
+
+## 📁 Struktur Folder
+
+```bash
 app/
 ├── Http/
 │   ├── Controllers/
@@ -63,4 +114,13 @@ app/
 resources/views/
 routes/web.php
 routes/api.php
+tests/
+```
 
+---
+
+## 📬 Kontak
+
+Pengembang: **Muhamad Fadly**  
+Email: [masukkan email kamu di sini kalau mau]  
+GitHub: [https://github.com/muhamadfadly](https://github.com/muhamadfadly)
